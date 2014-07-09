@@ -1,7 +1,7 @@
 Plupload Recline and Plupload Recline DKAN
 ================
 
-This module allows users to upload large files with plupload library with the Recline module.
+This module allows users to upload large files using the plupload library with the Recline module.
 
 There is also an additional module Plupload Recline DKAN which enables large file uploads for the "File Upload" field attached to "Resources" in DKAN.
 
