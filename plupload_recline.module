@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Add plupload field to recline widget.
+ */
+
+/**
+ * Implements filefield_sources_widgets().
+ */
+function plupload_recline_filefield_sources_widgets() {
+  return array('recline_widget');
+}

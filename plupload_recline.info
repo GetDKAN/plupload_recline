@@ -1,0 +1,8 @@
+name = Plupload for Recline.js Field
+description = Adds plupload functionality to the recline widget
+core = 7.x
+
+dependencies[] = recline
+dependencies[] = plupload
+dependencies[] = filefield_sources
+dependencies[] = filefield_sources_plupload

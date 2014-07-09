@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Plupload Recline DKAN feature.
+ */
+
+include_once 'plupload_recline_dkan.features.inc';
