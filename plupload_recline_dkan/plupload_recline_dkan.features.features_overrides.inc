@@ -22,11 +22,6 @@ function plupload_recline_dkan_features_override_default_overrides() {
       'remotefile' => 0,
       'upload' => 0,
     ),
-    'source_attach' => array(
-      'absolute' => NULL,
-      'attach_mode' => 'move',
-      'path' => '',
-    ),
   );
 
  return $overrides;

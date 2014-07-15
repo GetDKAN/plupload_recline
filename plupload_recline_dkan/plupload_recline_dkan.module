@@ -5,3 +5,14 @@
  */
 
 include_once 'plupload_recline_dkan.features.inc';
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function plupload_recline_dkan_field_widget_form_alter(&$element, &$form_state, $context) {
+  // For some reason with the plupload file source we get a doubling of the
+  // description.
+  if (isset($element[0]['#field_name']) && $element[0]['#field_name'] == 'field_upload') {
+    $element[0]['#description'] = '';
+  }
+}

@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Install file for DKAN settings.
+ */
+
+
+/**
+ * Implements hook_install().
+ */
+function plupload_recline_dkan_install() {
+  module_load_include('inc', 'field', 'field.crud');
+  $instance = field_info_instance('node', 'field_upload', 'resource');
+  $instance['widget']['settings']['filefield_sources']['filefield_sources']['upload'] = 0;
+  $instance['widget']['settings']['filefield_sources']['filefield_sources']['plupload'] = 'plupload';
+  field_update_instance($instance);
+}
