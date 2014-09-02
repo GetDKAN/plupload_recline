@@ -9,5 +9,6 @@ dependencies[] = plupload
 dependencies[] = recline
 features[features_api][] = api:2
 features[features_override_items][] = field_instance.node-resource-field_upload
+features[features_overrides][] = field_instance.node-resource-field_upload.settings|max_filesize
 features[features_overrides][] = field_instance.node-resource-field_upload.widget|settings|filefield_sources
-project path = profiles/dkan/modules/plupload_recline
+project path = sites/all/modules/contrib/plupload_recline

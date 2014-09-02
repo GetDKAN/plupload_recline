@@ -12,6 +12,7 @@ function plupload_recline_dkan_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: field_instance
+  $overrides["field_instance.node-resource-field_upload.settings|max_filesize"] = '100000 MB';
   $overrides["field_instance.node-resource-field_upload.widget|settings|filefield_sources"] = array(
     'filefield_sources' => array(
       'attach' => 0,

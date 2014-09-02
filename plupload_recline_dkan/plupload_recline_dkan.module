@@ -10,9 +10,27 @@ include_once 'plupload_recline_dkan.features.inc';
  * Implements hook_field_widget_form_alter().
  */
 function plupload_recline_dkan_field_widget_form_alter(&$element, &$form_state, $context) {
-  // For some reason with the plupload file source we get a doubling of the
-  // description.
   if (isset($element[0]['#field_name']) && $element[0]['#field_name'] == 'field_upload') {
+    // Remove the file size limit set in php.ini.
+    unset($element[0]['#upload_validators']['file_validate_size']);
+    // For some reason with the plupload file source we get a doubling of the
+    // description.
     $element[0]['#description'] = '';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function plupload_recline_dkan_form_alter(&$form, $form_state, $form_id) {
+  switch ($form_id) {
+    case 'resource_node_form':
+      // Move data below title since there are more of them with plupload.
+      $form['#groups']['group_data']->weight = 3;
+      // Moves upload above Recline settings.
+      $lang = $form['field_upload']['#language'];
+      $form['field_upload'][$lang]['0']['view']['#weight'] = 101;
+      $form['field_upload'][$lang]['0']['embed']['#weight'] = 102;
+      $form['field_upload'][$lang]['0']['delimiter']['#weight'] = 102;
   }
 }

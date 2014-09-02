@@ -9,6 +9,7 @@
  */
 function plupload_recline_dkan_field_default_field_instances_alter(&$data) {
   if (isset($data['node-resource-field_upload'])) {
+    $data['node-resource-field_upload']['settings']['max_filesize'] = '10000 MB'; /* WAS: '' */
     $data['node-resource-field_upload']['widget']['settings']['filefield_sources'] = array(
       'filefield_sources' => array(
         'attach' => 0,
@@ -18,11 +19,6 @@ function plupload_recline_dkan_field_default_field_instances_alter(&$data) {
         'remote' => 0,
         'remotefile' => 0,
         'upload' => 0,
-      ),
-      'source_attach' => array(
-        'absolute' => NULL,
-        'attach_mode' => 'move',
-        'path' => '',
       ),
     ); /* WAS: '' */
   }
